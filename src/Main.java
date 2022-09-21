@@ -1,37 +1,28 @@
 /*
     Author: Jose Angel Silva Cruz
-    Fecha: 20/09/2022
+    Fecha: 21/09/2022
  */
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args){
-        int no1,no2,no3;
-        no1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        no2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        no3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        JOptionPane.showMessageDialog(null, "La Suma es: " + suma_tresNo(no1,no2,no3));
 
-        //Ejercicio de Coche
-        coche mi_coche = new coche();
-        mi_coche.add_door();
-        mi_coche.add_door();
-        JOptionPane.showMessageDialog(null, "Cantidad de puertas es de " + mi_coche.can_doors);
-    }
-    public static int suma_tresNo(int a, int b, int c){
-        return a + b + c;
-    }
-}
+        // Practica de sentencias
+        int no1;
+        no1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero"));
+        numero_mayor_igual_cero no = new numero_mayor_igual_cero(no1);
+        no.decicion();
+        // Practica 2 de bucles
+        bucle_While mi_bucle = new bucle_While();
+        mi_bucle.bucle_while();
+        mi_bucle.do_while();
+        mi_bucle.bucle_for();
 
-class coche {
-    public int can_doors = 4;
-
-    public void add_door(){
-        this.can_doors++;
-    }
-    public void res_door(){
-        this.can_doors--;
+        // estacion
+        int Opcion_estacion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero de la estacion de cada año"));
+        estaciones obten_estacion = new estaciones(Opcion_estacion);
+        JOptionPane.showMessageDialog(null, obten_estacion.estacion_es());
     }
 
 }
