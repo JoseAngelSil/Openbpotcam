@@ -1,37 +1,20 @@
-/*
-    Author: Jose Angel Silva Cruz
-    Fecha: 20/09/2022
- */
-
-import javax.swing.*;
-
 public class Main {
     public static void main(String[] args){
-        int no1,no2,no3;
-        no1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        no2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        no3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        JOptionPane.showMessageDialog(null, "La Suma es: " + suma_tresNo(no1,no2,no3));
-
-        //Ejercicio de Coche
+        //Declaracion de un nuevo objeto de la clase coche.
         coche mi_coche = new coche();
-        mi_coche.add_door();
-        mi_coche.add_door();
-        JOptionPane.showMessageDialog(null, "Cantidad de puertas es de " + mi_coche.can_doors);
-    }
-    public static int suma_tresNo(int a, int b, int c){
-        return a + b + c;
-    }
-}
 
-class coche {
-    public int can_doors = 4;
+        //Enviar datos del objeto
+        mi_coche.setModelo("Renault Clio 2003");
+        //invocar funciones del coche
+        System.out.printf("Cantidad de puertas: %d\n", mi_coche.no_puerta);
+        System.out.printf("Velocidad Maxima: %d\n", mi_coche.velocidad_max);
+        System.out.printf("Modelo: %S\n",mi_coche.getModelo());
 
-    public void add_door(){
-        this.can_doors++;
-    }
-    public void res_door(){
-        this.can_doors--;
+        coche mi_coche2 = new coche(7,360);
+
+        //invocar funciones del coche
+        System.out.printf("Cantidad de puertas: %d\n", mi_coche2.no_puerta);
+        System.out.printf("Velocidad Maxima: %d\n", mi_coche2.velocidad_max);
     }
 
 }
