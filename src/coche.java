@@ -1,7 +1,7 @@
-// Creacion de una clase
-public class coche {
+// Creacion de una clase que hereda de Vehiculo
+public class coche extends Vehiculo{
     //Creacion y declaracion de atributos
-    int no_puerta, velocidad_max;
+    int no_puerta;
     float vel_act;
     private String modelo;
     private boolean estado;
@@ -24,12 +24,12 @@ public class coche {
 
     public coche(){ // Constructor sin entradas
         no_puerta = 5;
-        velocidad_max = 12;
+        this.VelocidadMaxima = 150;
     }
     public coche(int no_puerta, int velocidad_max) {// Creacion de un constructor con entrada
         // buena practica con this.nombreVariableGlobal = VariableLocal
         this.no_puerta = no_puerta;
-        this.velocidad_max = velocidad_max;
+        this.VelocidadMaxima = velocidad_max;
     }
 
     // Creacion de funciones de la clase
@@ -38,5 +38,11 @@ public class coche {
     }
     public void desacelerar(){
         vel_act -= 10;
+    }
+    void setSonido(String sonido) { //uso del metodo abstracto en la clase hija
+        this.sonido = sonido;
+    }
+    public String getSonido() {
+        return "Soy un supersonido: " + this.sonido;
     }
 }
