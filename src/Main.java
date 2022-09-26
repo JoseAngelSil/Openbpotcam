@@ -1,37 +1,27 @@
 /*
     Author: Jose Angel Silva Cruz
-    Fecha: 20/09/2022
+    Fecha: 26/09/2022
  */
-
-import javax.swing.*;
 
 public class Main {
     public static void main(String[] args){
-        int no1,no2,no3;
-        no1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        no2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        no3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-        JOptionPane.showMessageDialog(null, "La Suma es: " + suma_tresNo(no1,no2,no3));
+        // Creacion de objeto de cliente
+        Cliente cliente1 = new Cliente();
+        cliente1.setNombre("Jose Bolaños Santiago");
+        cliente1.setEdad((byte) 42);
+        cliente1.setTelefono("+52 56 1122 3556");
+        cliente1.setCredito(4560);
 
-        //Ejercicio de Coche
-        coche mi_coche = new coche();
-        mi_coche.add_door();
-        mi_coche.add_door();
-        JOptionPane.showMessageDialog(null, "Cantidad de puertas es de " + mi_coche.can_doors);
-    }
-    public static int suma_tresNo(int a, int b, int c){
-        return a + b + c;
-    }
-}
+        System.out.printf("Nombre de cliente: %s\nEdad: %d\nTelefono: %s\nCredito Disponible: %d",
+                cliente1.getNombre(), cliente1.getEdad(), cliente1.getTelefono(), cliente1.getCredito());
 
-class coche {
-    public int can_doors = 4;
-
-    public void add_door(){
-        this.can_doors++;
+        // Objeto de Trabajador
+        Trabajador trabajador1 = new Trabajador();
+        trabajador1.setNombre("Josue Araiza");
+        trabajador1.setEdad((byte) 23);
+        trabajador1.setTelefono("+52 56 2231 4578");
+        trabajador1.setSalario(5600);
+        System.out.printf("\n\nNombre de trabajador: %s\nEdad: %d\nTelefono: %s\nSalario: %d",
+                trabajador1.getNombre(),trabajador1.getEdad(), trabajador1.getTelefono(), trabajador1.getSalario());
     }
-    public void res_door(){
-        this.can_doors--;
-    }
-
 }
